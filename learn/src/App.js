@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState}from 'react';
+import OneUseState from './Demo/OneUseState';
+import TwoUseEffect from './Demo/TwoUseEffect';
+import './index.css'
 
-function App() {
+const Index = () => {
+  const [activeComponet, setactiveComponet] = useState(<OneUseState></OneUseState>)
+  const tabList = [
+    {
+      title: 'useState',
+      component:<OneUseState/>
+    },
+    {
+      title: 'useEffect',
+      component:<TwoUseEffect/>
+    },
+  ]
+  const setActiveKey = (item) => {
+    setactiveComponet(item.component);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <React.Fragment>
+      {
+        tabList.map(item => {
+          return <button onClick={() => { setActiveKey(item) }}>
+            {item.title}
+          </button>
+        })
+      }
+      {
+        activeComponet
+      }
+    </React.Fragment>
+  )
 }
-
-export default App;
+export default Index;

@@ -1,0 +1,25 @@
+{
+  "name": "react-hook-study",
+  "version": "1.0.0",
+  "description": "react 学习",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zhouyuying123/react-hook-study.git"
+  },
+  "keywords": [
+    "学习"
+  ],
+  "author": "周",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zhouyuying123/react-hook-study/issues"
+  },
+  "homepage": "https://github.com/Zhouyuying123/react-hook-study#readme",
+  "devDependencies": {
+    "react": "^17.0.1"
+  }
+}

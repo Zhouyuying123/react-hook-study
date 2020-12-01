@@ -4,6 +4,7 @@ import TwoUseEffect from './Demo/TwoUseEffect';
 import UseRefC from './Demo/UseRef';
 import UseContext from './Demo/UseContext';
 import UseMemoFun from './Demo/UseMemoFun';
+import UseCallback from './Demo/Usecallback';
 import './index.css'
 
 const Index = () => {
@@ -27,6 +28,10 @@ const Index = () => {
     {
       title: 'useMemo',
       component:<UseMemoFun/>
+    },
+    {
+      title: 'useCallback',
+      component:<UseCallback/>
     },
   ]
   const [activeComponet, setactiveComponet] = useState(tabList[0])

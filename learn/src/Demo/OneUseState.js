@@ -15,7 +15,7 @@ const Index = () => {
       <p>改变简单数据类型</p>
       <h2>{count}</h2>
       <button onClick={() => { setcount(count + 1) }}>change count</button>
-      <br />
+      <br /><hr/>
       <p>改变对象</p>
       <h2>{obj.name}---{ obj.age}</h2>
       <button onClick={() => { // set方法里面要返回新对象
@@ -24,7 +24,7 @@ const Index = () => {
           age:20,
         })
       }}>change-obj</button>
-      <br />
+      <br /><hr/>
       <p>改变数组</p>
       <h2>{arr}</h2>
       <button
@@ -35,6 +35,7 @@ const Index = () => {
           })
         }}
       >change arr</button>
+      <hr/>
     </>
   )
 }

@@ -1,3 +1,21 @@
 body {
   padding: 10px;
 }
+header {
+  height: 30px;
+  border-bottom: 1px solid;
+}
+.tab-items {
+  /* text-decoration: underline; */
+  display: inline-block;
+  border-right: 1px solid;
+  margin-right: 15px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+.active {
+  color: goldenrod;
+}
+button {
+  cursor: pointer;
+}

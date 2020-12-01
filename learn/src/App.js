@@ -1,10 +1,12 @@
 import React, { useState}from 'react';
 import OneUseState from './Demo/OneUseState';
 import TwoUseEffect from './Demo/TwoUseEffect';
+import UseRefC from './Demo/UseRef';
+import UseContext from './Demo/UseContext';
+import UseMemoFun from './Demo/UseMemoFun';
 import './index.css'
 
 const Index = () => {
-  const [activeComponet, setactiveComponet] = useState(<OneUseState></OneUseState>)
   const tabList = [
     {
       title: 'useState',
@@ -14,22 +16,39 @@ const Index = () => {
       title: 'useEffect',
       component:<TwoUseEffect/>
     },
+    {
+      title: 'UseRef',
+      component:<UseRefC/>
+    },
+    {
+      title: 'UseContext',
+      component:<UseContext/>
+    },
+    {
+      title: 'useMemo',
+      component:<UseMemoFun/>
+    },
   ]
+  const [activeComponet, setactiveComponet] = useState(tabList[0])
+  
   const setActiveKey = (item) => {
-    setactiveComponet(item.component);
+    setactiveComponet(item);
   }
   return (
     <React.Fragment>
+      <header >
       {
         tabList.map(item => {
-          return <button onClick={() => { setActiveKey(item) }}>
+          return <div className= {`${item.title===activeComponet.title?'active':''} tab-items`}
+            onClick={() => { setActiveKey(item) }} key={item.title}>
             {item.title}
-          </button>
+          </div>
         })
-      }
-      {
-        activeComponet
-      }
+        }
+        </header>
+          {
+            activeComponet.component
+          }
     </React.Fragment>
   )
 }

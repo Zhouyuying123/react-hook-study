@@ -27,3 +27,21 @@ export const debounce = (func, wait) => {
     }, wait);
   };
 };
+
+// 发布订阅
+export const event = () => {
+  let list = {};
+  const on = (key, fn) => {
+    if (!list[key]) {
+      list[key] = [];
+    }
+    list[key].push(fn);
+  };
+  const emit = (key) => {
+    let fn = list[key];
+    if (!fn || !fn.length) {
+      return;
+    }
+    fn();
+  };
+};
